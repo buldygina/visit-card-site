@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesToScroll: 1,
     centerMode: true, // Делает центральный слайд более заметным
     variableWidth: true, // Позволяет различным ширинам слайдов
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false,
+          centerMode: false,
+          variableWidth: false
+        }
+      }
+    ]
   });
   $(".carousel").on(
     "beforeChange",
@@ -156,32 +166,38 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
-
+  let menuToggle = document.getElementById("hamburger-input")
   //контакты
   document.getElementById("Contacts").onclick = () => {
+    menuToggle.checked = false
     document
       .getElementsByClassName("footer")[0]
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
   // обо мне
   document.getElementById("AboutMe").onclick = () => {
+    menuToggle.checked = false
     document
       .getElementsByClassName("maintext")[0]
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
   document.getElementById("Skills").onclick = () => {
+    menuToggle.checked = false
     document
       .getElementsByClassName("skills")[0]
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
   document.getElementsByClassName("back")[0].onclick = () => {
+    menuToggle.checked = false
     document
       .getElementsByClassName("wrap")[0]
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
   document.getElementById("Portfolio").onclick = () => {
+    menuToggle.checked = false
     document
       .getElementsByClassName("textportfolio")[0]
       .scrollIntoView({ behavior: "smooth", block: "end" });
   };
+  
 });
